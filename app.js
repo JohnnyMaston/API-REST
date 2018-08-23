@@ -13,24 +13,19 @@ var routes = require('./routes/routes.js');
 var router = express.Router();
 
 
-
 function iniciar() {
-
-database.mongodb(mongoose);
-
-
-// Middlewares
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(methodOverride());
-app.use('/api', router);
-
-routes.routes(router);
-
-// Start server --
-app.listen(3000, function () {
-  console.log('Node server running on http://localhost:3000');
-});
+  database.mongodb(mongoose);
+  // Middlewares
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(methodOverride());
+  app.use('/api', router);
+  //routes
+  routes.routes(router);
+  // Start server --
+  app.listen(3000, function () {
+    console.log('Node server running on http://localhost:3000');
+  });
 }
 
 
