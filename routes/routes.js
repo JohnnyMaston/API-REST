@@ -11,6 +11,11 @@ router.route ('/Users/:id')
   .put(UsersCtrl.updateUsers)
   .delete(UsersCtrl.deleteUsers);
 
+  //other route 
+  /*
+router .route ('/Admin')
+  .get(UsersCtrl.findAllUsers)
+*/
 }
 
 exports.routes = routes;
